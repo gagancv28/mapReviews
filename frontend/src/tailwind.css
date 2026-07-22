@@ -1,0 +1,35 @@
+/* Tailwind CSS directives — loaded by ReviewDashboard only */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom component layer ────────────────────────────── */
+@layer components {
+  .card-glass {
+    @apply bg-white/60 backdrop-blur-sm border border-sky/70 rounded-2xl shadow-card
+           transition-all duration-300 hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+
+  .btn-filter {
+    @apply px-4 py-1.5 rounded-full text-sm border transition-all duration-200
+           font-baloo cursor-pointer select-none;
+  }
+
+  .btn-filter-active {
+    @apply bg-ocean text-white border-ocean shadow-sm;
+  }
+
+  .btn-filter-inactive {
+    @apply bg-white/70 text-midblue border-sky hover:bg-sky/30 hover:border-ocean;
+  }
+
+  .star-filled { @apply text-amber-400; }
+  .star-empty  { @apply text-sky/60; }
+
+  .badge-positive { @apply bg-emerald-50 text-emerald-700 border border-emerald-200; }
+  .badge-negative { @apply bg-rose-50    text-rose-700    border border-rose-200;    }
+  .badge-mixed    { @apply bg-amber-50   text-amber-700   border border-amber-200;   }
+
+  .bar-track { @apply h-2 rounded-full bg-sky/30 overflow-hidden flex-1; }
+  .bar-fill  { @apply h-full rounded-full transition-all duration-700; }
+}
