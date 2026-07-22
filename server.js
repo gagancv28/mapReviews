@@ -34,8 +34,12 @@ app.use((err, _req, res, _next) => {
 });
 
 // ── Start ─────────────────────────────────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`✅  Server running on http://localhost:${PORT}`);
-  console.log(`   POST http://localhost:${PORT}/api/fetch-reviews`);
-  console.log(`   GET  http://localhost:${PORT}/health`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`✅  Server running on http://localhost:${PORT}`);
+    console.log(`   POST http://localhost:${PORT}/api/fetch-reviews`);
+    console.log(`   GET  http://localhost:${PORT}/health`);
+  });
+}
+
+export default app;
