@@ -8,3 +8,6 @@ node_modules/
 *.log
 npm-debug.log*
 .vercel
+
+# generated build output
+public/
